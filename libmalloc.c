@@ -248,7 +248,7 @@ void ItSS_HeapTest() {
   for(index = 0; index < listSize; index++) {
     if(ptrList[index].pointer != NULL) {
       if(ptrList[index].isFree == 1) {
-        verifyCleanBlock(ptrList[index].pointer, 0);
+        verifyCleanBlock(ptrList[index].pointer, ptrList[index].blockSize);
       }
       else {
         verifyCanaryIntegrity(ptrList[index].pointer, ptrList[index].blockSize);
